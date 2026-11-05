@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 25px 8%;
+    background: #111827;
+    border-bottom: 1px solid #334155;
+}
+
+header h2 {
+    color: #38bdf8;
+}
+
+header p {
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #cbd5e1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    width: 380px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: #38bdf8;
+}
+
+.card p {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 130px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #7c3aed;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #94a3b8;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+    .hero {
+        padding: 45px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 450px;
+    }
+
+}
+
+/* Smartphone */
+@media screen and (max-width: 480px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h2 {
+        font-size: 22px;
+    }
+
+    .hero {
+        padding: 35px 15px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+}

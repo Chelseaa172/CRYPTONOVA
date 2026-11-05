@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRYPTONOVA - Secure Encryption</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='crypto.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h2>🔐 CRYPTONOVA</h2>
+        <p>Advanced Cryptography System</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Secure Your Digital World</h1>
+            <p>Enkripsi dan dekripsi pesan dengan keamanan AES-256-GCM.</p>
+        </section>
+
+        <section class="container">
+
+            <!-- FORM ENKRIPSI -->
+            <div class="card">
+                <h2>Text Encryption</h2>
+                <p>Ubah pesan rahasia menjadi teks terenkripsi.</p>
+
+                <form method="POST">
+                    <input type="hidden" name="action" value="encrypt">
+
+                    <textarea
+                        name="plaintext"
+                        placeholder="Masukkan pesan rahasia..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">Encrypt Message</button>
+                </form>
+            </div>
+
+            <!-- FORM DEKRIPSI -->
+            <div class="card">
+                <h2>Text Decryption</h2>
+                <p>Kembalikan teks terenkripsi menjadi pesan asli.</p>
+
+                <form method="POST">
+                    <input type="hidden" name="action" value="decrypt">
+
+                    <textarea
+                        name="encrypted_text"
+                        placeholder="Masukkan teks terenkripsi..."
+                        required
+                    ></textarea>
+
+                    <input
+                        type="text"
+                        name="key_id"
+                        placeholder="Masukkan Key ID"
+                        required
+                    >
+
+                    <button type="submit">Decrypt Message</button>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- HASIL PROSES -->
+        {% if result %}
+        <section class="card">
+            <h2>Hasil Proses</h2>
+
+            {% if key_id %}
+                <p>Key ID: {{ key_id }}</p>
+            {% endif %}
+
+            <textarea readonly>{{ result }}</textarea>
+        </section>
+        {% endif %}
+
+        {% if error %}
+        <section class="card">
+            <h2>Terjadi Kesalahan</h2>
+            <p>{{ error }}</p>
+        </section>
+        {% endif %}
+
+    </main>
+
+    <footer>
+        <p>CRYPTONOVA © 2026 | Secure Your Information</p>
+    </footer>
+
+</body>
+</html>
