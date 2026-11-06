@@ -41,3 +41,13 @@ def decrypt_text(encrypted_text, key):
     )
 
     return plaintext.decode("utf-8")
+
+import hashlib
+
+def hash_md5(text):
+    hasil = hashlib.md5(text.encode("utf-8")).hexdigest()
+    return hasil
+
+def verify_md5(text, original_hash):
+    generated_hash = hash_md5(text)
+    return generated_hash.lower() == original_hash.lower()

@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, request
 
-from crypto.encryption import encrypt_text, decrypt_text
+from crypto.encryption import encrypt_text, decrypt_text, hash_md5,  verify_md5
 from crypto.key_manager import KeyManager
 
 app = Flask(__name__)
@@ -42,6 +42,19 @@ def home():
                 key = manager.get_key(key_id)
 
                 result = decrypt_text(encrypted_text, key)
+
+            elif action == "md5":
+                plaintext = request.form.get("plaintext", "")
+                print("TEKS YANG DITERIMA:", repr(plaintext))
+                result = hash_md5(plaintext)
+
+            elif action == "verify_md5":
+                plaintext = request.form.get("plaintext", "")
+                original_hash = request.form.get("original_hash", "")
+                if verify_md5(plaintext, original_hash):
+                    result = "Hash cocok! Teks sesuai."
+                else:
+                    result = "Hash tidak cocok!"
 
         except Exception:
             error = "Proses gagal. Periksa teks, Key ID, atau kunci yang digunakan."

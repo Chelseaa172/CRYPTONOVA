@@ -67,7 +67,45 @@
                     <button type="submit">Decrypt Message</button>
                 </form>
             </div>
+       
+           <!-- CARD MD5 -->
+            <div class="card">
+                <h2>MD5 Hash Generator</h2>
+                <p>Ubah teks menjadi hash MD5 satu arah.</p>
+                
+            <form method="POST">
+                <textarea
+                name="plaintext"
+                placeholder="Masukkan teks yang ingin di-hash..."
+                required
+                ></textarea>
+            <input type="hidden" name="action" value="md5">
+            <button type="submit">Generate MD5</button>
+        </form>
+    </div>
 
+            <!-- CARD MD5 CHECKER -->
+             <div class="card">
+             <h2>MD5 Hash Checker</h2>
+             <p>Periksa apakah teks menghasilkan hash MD5 yang sesuai.</p>
+
+        <form method="POST">
+            <input type="hidden" name="action" value="verify_md5">
+            <textarea
+            name="plaintext"
+            placeholder="Masukkan teks asli..."
+            required
+        ></textarea>
+
+        <input
+            type="text"
+            name="original_hash"
+            placeholder="Masukkan hash MD5..."
+            required
+        >
+            <button type="submit">Check MD5</button>
+        </form>
+    </div>
         </section>
 
         <!-- HASIL PROSES -->
